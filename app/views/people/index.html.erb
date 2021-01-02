@@ -1,0 +1,11 @@
+<div>
+  <% @people.each do |person| %>
+    <div>
+      <label>Nombre:</label>
+      <span><%= person.name %></span>
+      <span><%= person.last_name %></span>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Person', new_person_path %>

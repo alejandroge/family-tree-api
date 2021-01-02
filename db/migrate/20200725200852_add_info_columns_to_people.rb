@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddInfoColumnsToPeople < ActiveRecord::Migration[6.0]
   def change
     add_column :people, :name, :string
