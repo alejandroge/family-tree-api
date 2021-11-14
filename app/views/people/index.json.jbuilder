@@ -1,8 +1,7 @@
+json.key_format! camelize: :lower
+
 json.people_count @people.count
 
 json.people @people do |person|
-  json.extract! person,
-    :first_name,
-    :last_name,
-    :sex
+  json.partial! 'people/person', person: person
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_11_210640) do
+ActiveRecord::Schema.define(version: 2021_11_14_212234) do
 
   create_table "people", force: :cascade do |t|
     t.string "first_name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_11_11_210640) do
     t.integer "current_spouse_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "birth_date"
+    t.date "death_date"
     t.index ["father_id", "mother_id"], name: "index_people_on_father_id_and_mother_id"
     t.index ["father_id"], name: "index_people_on_father_id"
     t.index ["mother_id"], name: "index_people_on_mother_id"
