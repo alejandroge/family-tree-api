@@ -12,13 +12,8 @@ class PeopleController < ApplicationController
   def family
     person = Person.find(params[:person_id])
     
-    if person.is_male?
-      @father = person
-      @mother = person.current_spouse
-    else
-      @mother = person
-      @father = person.current_spouse
-    end
+    @father = person.is_male? ? person : person.current_spouse
+    @mother = person.is_female? ? person : person.current_spouse
     
     @children = person.children_with_current_spouse
   end
