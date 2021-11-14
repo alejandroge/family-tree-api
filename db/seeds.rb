@@ -5,19 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-male_person = Person.create!({
-  first_name: 'Joe', last_name: 'Doe', sex: :male,
-})
-female_person = Person.create!({
-  first_name: 'Jenna', last_name: 'Doe', sex: :female,
-})
+male_person = Person.create!(first_name: 'Joe', last_name: 'Doe', sex: :male)
+female_person = Person.create!(first_name: 'Jenna', last_name: 'Doe', sex: :female)
 
-father = Person.create!({
-  first_name: 'John', last_name: 'Doe', sex: :male,
-})
-mother = Person.create!({
-  first_name: 'Johana', last_name: 'Doe', sex: :female,
-})
+father = Person.create!(first_name: 'John', last_name: 'Doe', sex: :male)
+mother = Person.create!(first_name: 'Johana', last_name: 'Doe', sex: :female)
 
 father.add_children(male_person, female_person)
 mother.add_children(male_person, female_person)
+
+father.add_current_spouse(mother)
