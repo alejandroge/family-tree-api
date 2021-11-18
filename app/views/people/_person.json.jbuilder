@@ -1,5 +1,3 @@
-json.key_format! camelize: :lower
-
 json.extract! person,
   :id,
   :first_name,
@@ -7,3 +5,5 @@ json.extract! person,
   :sex,
   :birth_date,
   :death_date
+  
+  json.family_url person_family_url(person) if person.children.exists?

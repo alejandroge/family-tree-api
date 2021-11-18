@@ -1,7 +1,6 @@
-# README
+# Family Tree
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an API for managing a family tree.
 
 Things you may want to cover:
 
