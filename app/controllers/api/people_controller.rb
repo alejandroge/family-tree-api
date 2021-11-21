@@ -1,12 +1,17 @@
-class PeopleController < ApplicationController
+class Api::PeopleController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @people = Person.all
+
+    render_jsonapi_response(@people)
   end
   
   def create
     @person = Person.new(person_params)
-    
     @person.save!
+
+    render_jsonapi_response(@person)
   end
   
   def family
